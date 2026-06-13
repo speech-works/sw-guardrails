@@ -14,6 +14,15 @@ It checks words and code alike: blog posts, marketing and landing copy, UI
 strings, AI Coach and other LLM prompts, analytics event names, metric and KPI
 names, dashboard tiles, schema fields, and the copy buried inside source files.
 
+> [!IMPORTANT]
+> **Found something that looks wrong?** This skill is about a sensitive, lived
+> experience, so it will contain mistakes, blind spots, and framing that does
+> not fit everyone. Please help us correct it. See
+> [**CONTRIBUTING.md**](./CONTRIBUTING.md) for a copy-paste issue format and a
+> short process. If a guideline contradicts your lived experience, you are right
+> and the rule needs to change. Corrections from people who stutter or stammer,
+> SLPs, and families are especially welcome.
+
 ---
 
 ## Why this exists

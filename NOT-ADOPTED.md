@@ -9,7 +9,8 @@ left out, and why, so the choices are transparent and open to challenge.
 These are judgement calls, not criticisms of the organisations. Each source is
 strong in its own context; the only question here is what fits Speechworks'
 product and its India audience. If you think we got one of these wrong, please
-open an issue.
+[raise an issue](./CONTRIBUTING.md). There is a copy-paste format that makes it
+quick.
 
 | What we found | Source | Why we didn't adopt it, and what we do instead |
 | --- | --- | --- |
