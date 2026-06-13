@@ -188,4 +188,4 @@ work is the maintainers' alone.
 
 ## License
 
-[MIT](./LICENSE) © Speech Works.
+[MIT](./LICENSE) © Speechworks.
