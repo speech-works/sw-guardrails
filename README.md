@@ -71,7 +71,7 @@ concrete rewrite.
 
 This repo is also a plugin marketplace. Add it once, then install the plugin:
 
-```
+```text
 /plugin marketplace add speech-works/sw-guardrails
 /plugin install sw-guardrails@speechworks
 ```
@@ -116,7 +116,7 @@ git -C .claude/skills/sw-guardrails checkout <commit-sha>
 
 In a session:
 
-```
+```text
 /sw-guardrails review web/src/app/page.tsx
 /sw-guardrails is this landing copy on-message?
 /sw-guardrails audit our analytics event names
