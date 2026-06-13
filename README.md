@@ -67,6 +67,10 @@ concrete rewrite.
 
 ## Install and use
 
+> **Using a different AI tool** (Cursor, a custom agent, an LLM app)? See
+> **[Use with any AI agent →](./USING-WITH-AGENTS.md)** for every install method
+> and the raw skill URL.
+
 ### As a Claude Code plugin (recommended)
 
 This repo is also a plugin marketplace. Add it once, then install the plugin:
