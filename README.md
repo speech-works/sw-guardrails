@@ -105,7 +105,12 @@ git clone https://github.com/speech-works/sw-guardrails.git \
 ```
 
 That gives you `.claude/skills/sw-guardrails/SKILL.md`, which Claude Code picks
-up automatically. Update it later with `git -C .claude/skills/sw-guardrails pull`.
+up automatically. Update it later with `git -C .claude/skills/sw-guardrails pull`,
+or pin to a fixed commit instead of tracking `main`:
+
+```bash
+git -C .claude/skills/sw-guardrails checkout <commit-sha>
+```
 
 ### Either way
 
