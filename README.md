@@ -151,9 +151,10 @@ experience wins, so please open an issue.
 
 ## References
 
-These guidelines draw on the sources below and quote them briefly, with
-attribution. Quotations are short and used for commentary; all rights stay with
-the original publishers.
+These guidelines blend several independent authorities (US, UK, and Indian), so
+they don't rest on one source or one era. They draw on the sources below and
+quote them briefly, with attribution. Quotations are short and used for
+commentary; all rights stay with the original publishers.
 
 1. **Hood, S. B. (Ed.). (2008). _Advice to Those Who Stutter_ (2nd ed.,
    Publication No. 0009). Stuttering Foundation of America. ISBN 0-933388-39-X.**
@@ -214,10 +215,37 @@ the original publishers.
    clinician referral lists. <https://www.stutteringhelp.org>
 3. **The Stuttering Homepage** (ed. Judy Kuster), a long-running directory of
    stuttering resources, listed in the source book at stutteringhomepage.com.
+4. **National Stuttering Association (NSA).** <https://www.westutter.org> — no
+   cure; "frequency of stuttering is not a meaningful measure of progress";
+   disclosure that creates understanding rather than apologises; anti-shame; and
+   concrete therapist red flags. Pages used include understanding-stuttering,
+   myths/causes, find-speech-therapist, and a-new-approach-to-self-disclosure.
+5. **The Indian Stammering Association (TISA).** <https://stammer.in> — the India
+   lens: acceptance-first ("हकलाओ मगर प्यार से", stammer with love), peer
+   self-help over clinical dependency, and a clear warning against predatory
+   "cure" advertising. Used for the India-context guidance.
+6. **STAMMA, the British Stammering Association.** <https://stamma.org> — uses
+   "stammering"; source of the RCSLT-endorsed editorial/language guidelines
+   (words to use and to avoid), the framing "it's not the stammer we're trying to
+   fix, it's the struggle," and "apps and devices won't cure stammering" and are
+   "helpful for some people but not others." Pages: editorial-guidelines,
+   finding-right-words, is-there-a-cure, apps-fluency-devices.
+7. **ASHA (American Speech-Language-Hearing Association).**
+   <https://www.asha.org/practice-portal/clinical-topics/fluency-disorders/> —
+   the clinical anchor: "increasing fluency may not be a goal," "stuttering itself
+   does not inherently require remediation," no valid cures, and a note that many
+   prefer neuroaffirming language.
+8. **Stammering-pride / neurodiversity scholarship.** The "Did I Stutter?"
+   project (<https://didistutter.org>), Christopher Constantino's "stuttering
+   gain" research, and *Stammering Pride and Prejudice: Difference not Defect*
+   (eds. Campbell, Constantino, Eldridge, 2019), read alongside its critiques (a
+   strong genetic/neurological basis; the risk of pressuring people in either
+   direction). Grounds the balanced self-determination rule.
 
 The rule about carrying both spellings, "stuttering" and "stammering", is a
-Speechworks decision about search and audience (UK and India search behaviour),
-not something from the book above. See the Speechworks SEO notes.
+Speechworks decision about search and audience (UK and India search behaviour).
+The difference/condition framing and the words-to-avoid list draw on STAMMA and
+ASHA; the India context draws on TISA. See the Speechworks SEO notes.
 
 ---
 
