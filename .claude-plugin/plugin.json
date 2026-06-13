@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "sw-guardrails",
+  "version": "0.1.0",
+  "description": "Reviews Speechworks content and code for therapeutic integrity and brand voice in stuttering and stammering work.",
+  "author": {
+    "name": "Speechworks",
+    "email": "contact@speechworks.in"
+  },
+  "homepage": "https://github.com/speech-works/sw-guardrails",
+  "repository": "https://github.com/speech-works/sw-guardrails",
+  "license": "MIT",
+  "keywords": [
+    "stuttering",
+    "stammering",
+    "speech-therapy",
+    "guardrails",
+    "content-review",
+    "speechworks"
+  ]
+}

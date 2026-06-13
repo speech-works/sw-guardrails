@@ -66,7 +66,36 @@ concrete rewrite.
 
 ## Install and use
 
-The repo is laid out so it drops straight into a project's skills directory:
+### As a Claude Code plugin (recommended)
+
+This repo is also a plugin marketplace. Add it once, then install the plugin:
+
+```
+/plugin marketplace add speech-works/sw-guardrails
+/plugin install sw-guardrails@speechworks
+```
+
+To auto-enable it for everyone working in a given repo, commit this to that
+repo's `.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "speechworks": {
+      "source": { "source": "github", "repo": "speech-works/sw-guardrails" }
+    }
+  },
+  "enabledPlugins": ["sw-guardrails@speechworks"]
+}
+```
+
+When a teammate clones that repo and trusts it, Claude Code registers the
+marketplace and enables the plugin automatically. Updates come with
+`/plugin marketplace update speechworks`.
+
+### As a project skill (no plugin)
+
+Or drop it straight into a project's skills directory:
 
 ```bash
 # from your project root
@@ -75,16 +104,17 @@ git clone https://github.com/speech-works/sw-guardrails.git \
 ```
 
 That gives you `.claude/skills/sw-guardrails/SKILL.md`, which Claude Code picks
-up automatically. Then, in a session:
+up automatically. Update it later with `git -C .claude/skills/sw-guardrails pull`.
+
+### Either way
+
+In a session:
 
 ```
 /sw-guardrails review web/src/app/page.tsx
 /sw-guardrails is this landing copy on-message?
 /sw-guardrails audit our analytics event names
 ```
-
-To update it later, run `git -C .claude/skills/sw-guardrails pull`, or add it as
-a git submodule.
 
 You can also read [`SKILL.md`](./SKILL.md) as a plain checklist for PR reviews or
 editorial sign-off, with no Claude Code involved. The grep quick-reference at the
