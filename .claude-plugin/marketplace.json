@@ -1,0 +1,14 @@
+{
+  "name": "speechworks",
+  "owner": {
+    "name": "Speechworks",
+    "email": "contact@speechworks.in"
+  },
+  "plugins": [
+    {
+      "name": "sw-guardrails",
+      "source": "./",
+      "description": "Reviews Speechworks content and code for therapeutic integrity and brand voice in stuttering and stammering work."
+    }
+  ]
+}
