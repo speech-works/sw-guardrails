@@ -136,6 +136,7 @@ bottom makes a fast first pass for a CI step.
 
 - [x] Core guidelines (A to D), severities, and the grep quick-reference
 - [x] Packaged as a Claude Code plugin and marketplace
+- [ ] Submit to the [Claude Community Marketplace](https://github.com/anthropics/claude-plugins-community) so it is discoverable to all Claude Code users
 - [ ] Worked before-and-after examples for each rule
 - [ ] A CI-friendly grep script (`scripts/check.sh`)
 - [ ] Test fixtures (known-good and known-bad samples) to catch drift
