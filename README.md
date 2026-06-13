@@ -1,8 +1,9 @@
 # sw-guardrails
 
 > **Status: under active development.** The guidelines, severities, and grep
-> patterns will keep changing as we learn, so pin a commit if you depend on
-> exact behaviour.
+> patterns will keep changing as we learn. Tagged releases for version pinning
+> are on the roadmap; until then, pin a specific commit if you need stable
+> behaviour.
 
 A [Claude Code](https://docs.claude.com/en/docs/claude-code) skill, installable
 as a plugin or used as a standalone checklist, for reviewing any
