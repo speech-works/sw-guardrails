@@ -4,10 +4,10 @@
 > patterns will keep changing as we learn, so pin a commit if you depend on
 > exact behaviour.
 
-A [Claude Code](https://docs.claude.com/en/docs/claude-code) skill, and a
-standalone checklist, for reviewing any [Speechworks](https://speechworks.app)
-artifact against the therapeutic-integrity and brand guidelines that govern how
-we write about stuttering and stammering.
+A [Claude Code](https://docs.claude.com/en/docs/claude-code) skill, installable
+as a plugin or used as a standalone checklist, for reviewing any
+[Speechworks](https://speechworks.app) artifact against the therapeutic-integrity
+and brand guidelines that govern how we write about stuttering and stammering.
 
 It checks words and code alike: blog posts, marketing and landing copy, UI
 strings, AI Coach and other LLM prompts, analytics event names, metric and KPI
@@ -125,6 +125,7 @@ bottom makes a fast first pass for a CI step.
 ## Status and roadmap
 
 - [x] Core guidelines (A to D), severities, and the grep quick-reference
+- [x] Packaged as a Claude Code plugin and marketplace
 - [ ] Worked before-and-after examples for each rule
 - [ ] A CI-friendly grep script (`scripts/check.sh`)
 - [ ] Test fixtures (known-good and known-bad samples) to catch drift
