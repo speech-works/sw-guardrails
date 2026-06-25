@@ -8,7 +8,7 @@
     {
       "name": "sw-guardrails",
       "source": "./",
-      "description": "Reviews Speechworks content and code for therapeutic integrity and brand voice in stuttering and stammering work."
+      "description": "Therapeutic-integrity and brand-voice tooling for Speechworks: a reviewer for any artifact (words or code) plus an outbound-messaging writer for the stuttering community."
     }
   ]
 }

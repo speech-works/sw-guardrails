@@ -5,14 +5,22 @@
 > are on the roadmap; until then, pin a specific commit if you need stable
 > behaviour.
 
-A [Claude Code](https://docs.claude.com/en/docs/claude-code) skill, installable
-as a plugin or used as a standalone checklist, for reviewing any
-[Speechworks](https://speechworks.app) artifact against the therapeutic-integrity
-and brand guidelines that govern how we write about stuttering and stammering.
+A [Claude Code](https://docs.claude.com/en/docs/claude-code) plugin for
+[Speechworks](https://speechworks.app) that bundles two skills for the way we
+write about stuttering and stammering:
 
-It checks words and code alike: blog posts, marketing and landing copy, UI
-strings, AI Coach and other LLM prompts, analytics event names, metric and KPI
-names, dashboard tiles, schema fields, and the copy buried inside source files.
+- **`sw-guardrails`** — reviews any Speechworks artifact, words or code, against
+  our therapeutic-integrity and brand guidelines.
+- **`sw-outreach`** — drafts and reviews outbound messages to the stuttering
+  community (people who stutter, self-help groups, SLPs, NGOs, partners) so they
+  stay honest, grounded in what the product can actually back, and human rather
+  than AI or salesy.
+
+Each skill is a single Markdown file under [`skills/`](./skills), and each works
+installed as a plugin or read as a plain checklist. The reviewer checks words and
+code alike: blog posts, marketing and landing copy, UI strings, AI Coach and
+other LLM prompts, analytics event names, metric and KPI names, dashboard tiles,
+schema fields, and the copy buried inside source files.
 
 > [!IMPORTANT]
 > **Found something that looks wrong?** This skill is about a sensitive, lived
@@ -58,9 +66,12 @@ enforceable version.
 
 ---
 
-## What it checks
+## What's inside
 
-The full ruleset lives in [`SKILL.md`](./SKILL.md). In summary:
+### `sw-guardrails` — the reviewer
+
+The full ruleset lives in
+[`skills/sw-guardrails/SKILL.md`](./skills/sw-guardrails/SKILL.md). In summary:
 
 | Section | Focus | Example catch |
 | --- | --- | --- |
@@ -71,6 +82,17 @@ The full ruleset lives in [`SKILL.md`](./SKILL.md). In summary:
 
 Each finding comes with a severity (🔴 block, 🟡 warn, 🔵 note), a reason, and a
 concrete rewrite.
+
+### `sw-outreach` — the outbound-message writer
+
+The ruleset lives in
+[`skills/sw-outreach/SKILL.md`](./skills/sw-outreach/SKILL.md). It drafts and
+reviews the messages Speechworks sends *out* — replies and cold intros to people
+who stutter, self-help groups (TISA and peers), SLPs, NGOs, and partners. Three
+jobs: pin one clear ask, keep every claim grounded in what the product and
+research actually support (verify before you write it), and strip the AI and
+salesy tells. It assumes the guardrails rules above and tells you to run drafts
+through them.
 
 ---
 
@@ -107,37 +129,41 @@ When a teammate clones that repo and trusts it, Claude Code registers the
 marketplace and enables the plugin automatically. Updates come with
 `/plugin marketplace update speechworks`.
 
-### As a project skill (no plugin)
+### As project skills (no plugin)
 
-Or drop it straight into a project's skills directory:
+Or drop the skills straight into a project's skills directory. Each folder under
+[`skills/`](./skills) maps to one `.claude/skills/<name>/` directory:
 
 ```bash
 # from your project root
-git clone https://github.com/speech-works/sw-guardrails.git \
-  .claude/skills/sw-guardrails
+git clone https://github.com/speech-works/sw-guardrails.git /tmp/sw-guardrails
+cp -R /tmp/sw-guardrails/skills/* .claude/skills/
 ```
 
-That gives you `.claude/skills/sw-guardrails/SKILL.md`, which Claude Code picks
-up automatically. Update it later with `git -C .claude/skills/sw-guardrails pull`,
-or pin to a fixed commit instead of tracking `main`:
+That gives you `.claude/skills/sw-guardrails/SKILL.md` and
+`.claude/skills/sw-outreach/SKILL.md`, which Claude Code picks up automatically.
+Re-run the copy to update, or pin to a fixed commit by checking it out in the
+clone before copying:
 
 ```bash
-git -C .claude/skills/sw-guardrails checkout <commit-sha>
+git -C /tmp/sw-guardrails checkout <commit-sha>
 ```
 
 ### Either way
 
-In a session:
+In a session, invoke a skill by name or just describe the task:
 
 ```text
 /sw-guardrails review web/src/app/page.tsx
-/sw-guardrails is this landing copy on-message?
 /sw-guardrails audit our analytics event names
+/sw-outreach draft a reply to a self-help-group contact
+/sw-outreach make this message less salesy and more honest
 ```
 
-You can also read [`SKILL.md`](./SKILL.md) as a plain checklist for PR reviews or
-editorial sign-off, with no Claude Code involved. The grep quick-reference at the
-bottom makes a fast first pass for a CI step.
+You can also read either `SKILL.md` (under [`skills/`](./skills)) as a plain
+checklist — the reviewer for PR or editorial sign-off, the outreach one before
+sending a message — with no Claude Code involved. The guardrails grep
+quick-reference makes a fast first pass for a CI step.
 
 ---
 
@@ -145,6 +171,7 @@ bottom makes a fast first pass for a CI step.
 
 - [x] Core guidelines (A to D), severities, and the grep quick-reference
 - [x] Packaged as a Claude Code plugin and marketplace
+- [x] Second skill — `sw-outreach`, for outbound messages to the stuttering community
 - [ ] Submit to the [Claude Community Marketplace](https://github.com/anthropics/claude-plugins-community) so it is discoverable to all Claude Code users
 - [ ] Worked before-and-after examples for each rule
 - [ ] A CI-friendly grep script (`scripts/check.sh`)

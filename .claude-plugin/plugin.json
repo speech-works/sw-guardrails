@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "sw-guardrails",
   "version": "0.2.0",
-  "description": "Reviews Speechworks content and code for therapeutic integrity and brand voice in stuttering and stammering work.",
+  "description": "Therapeutic-integrity and brand-voice tooling for Speechworks: a reviewer for any artifact (words or code) plus an outbound-messaging writer for the stuttering community.",
   "author": {
     "name": "Speechworks",
     "email": "contact@speechworks.in"
