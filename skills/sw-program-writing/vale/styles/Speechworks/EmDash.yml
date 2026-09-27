@@ -1,0 +1,8 @@
+extends: existence
+message: "No em or en dashes as punctuation. Use a full stop or comma."
+level: error
+nonword: true
+tokens:
+  - '—'
+  - '\s–\s'
+  - '\s--\s'

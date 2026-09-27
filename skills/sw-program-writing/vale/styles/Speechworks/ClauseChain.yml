@@ -1,0 +1,6 @@
+extends: occurrence
+message: "Three or more commas in one sentence. This is a clause chain; split it."
+scope: sentence
+level: warning
+max: 2
+token: ','

@@ -4,7 +4,9 @@ description: >-
   Review any Speechworks artifact — blog posts, marketing/landing copy, UI
   strings, AI Coach prompts, analytics event names, metric/KPI names, dashboard
   tiles, or code — against Speechworks' therapeutic-integrity and brand
-  guidelines for stuttering/stammering content (audience: India). Use when asked
+  guidelines for stuttering/stammering content (audience: English-speaking
+  adults worldwide; first markets US, UK, Australia, Canada, Ireland and New
+  Zealand; India is also a market). Use when asked
   to check, review, audit, or lint content or code for adherence to the
   guidelines, brand voice, the "fluency god" guardrail, or whether copy is
   on-message for people who stutter/stammer and the SLPs who work beside them.
@@ -19,7 +21,7 @@ people who stutter/stammer instead of quietly harming them.
 These guidelines blend several independent authorities, so they don't rest on a
 single source or era: the Stuttering Foundation's *Advice to Those Who Stutter*
 (the emotional "iceberg"), the **NSA** (westutter.org), **TISA** (The Indian
-Stammering Association — our audience is India), **STAMMA** (the British
+Stammering Association, for India-facing copy), **STAMMA** (the British
 Stammering Association, which uses "stammering"), **ASHA** (the clinical/evidence
 anchor), and the stammering-pride / neurodiversity scholarship and its critiques.
 They converge on one load-bearing idea: **the visible stammer is the tip of an
@@ -36,7 +38,7 @@ Speechworks' own positioning: AI practice for "the 167 hours between sessions"
 ## When to use
 
 Trigger on requests like: "check this post / copy / PR against our guidelines,"
-"is this on-brand?", "is this on-message for our India audience?", "review the AI
+"is this on-brand?", "is this on-message for our audience?", "review the AI
 Coach prompt," "audit our metrics," "does this respect people who stutter?", or
 before publishing any user-facing string or shipping any code that names, scores,
 or rewards speech.
@@ -209,10 +211,10 @@ not only "overcoming" or inspiration-porn narratives (STAMMA; see C3).
 ## C. Language & terminology
 
 ### C1 — Carry both spellings 🔵
-Always use BOTH "stuttering" (US) and "stammering" (UK/India — the dominant search
-term for this audience) in SEO-facing copy. Indian-English default is
-"stammering"; the Hindi term is "haklana / हकलाना" — use where audience-
-appropriate. (See the seo-keyword-strategy memory.)
+Match the reader. "Stuttering" for US, Canadian, Australian and New Zealand
+readers; "stammering" for UK, Irish and Indian readers. Use BOTH in SEO-facing
+copy that serves several markets. For India-facing copy, the Hindi term
+"haklana / हकलाना" can help. (See the seo-keyword-strategy memory.)
 
 ### C2 — Respectful person reference; respect self-identification 🟡
 "person who stutters" / "people who stutter (PWS)" is the safe, preferred default
@@ -253,9 +255,13 @@ therapy has mixed psychological outcomes. Don't overclaim either side.
 
 ---
 
-## D. India context
+## D. Market context
 
-The audience is India; the brand uses "stammering." Beyond C1's spelling rule:
+The first markets are the US, UK, Australia, Canada, Ireland and New Zealand.
+India is also a market. Apply the notes below only to copy meant for India.
+For every market, follow C1's spelling rule.
+
+India:
 
 - **Acknowledge real stigma when relevant** — family and marriage pressure (acute
   for women), and employment/interview discrimination — without melodrama or pity

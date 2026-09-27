@@ -1,0 +1,7 @@
+extends: existence
+message: "Trailing negation '%s'. Say what it is; drop the 'not' half."
+level: warning
+nonword: true
+tokens:
+  - ',\s+not\s+(?:a |an |the )?\w+[^.]{0,30}\.'
+  - '(?:^|\.\s+)Not\s+\w+[^.]{0,40},\s+not\b'

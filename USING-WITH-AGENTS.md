@@ -1,12 +1,16 @@
 # Use with any AI agent
 
-`sw-guardrails` ships two skills, each a single Markdown `SKILL.md` under
+`sw-guardrails` ships three skills, each with a Markdown `SKILL.md` under
 [`skills/`](./skills):
 
 - [`skills/sw-guardrails/SKILL.md`](./skills/sw-guardrails/SKILL.md) — the review
   ruleset (therapeutic integrity and brand voice).
 - [`skills/sw-outreach/SKILL.md`](./skills/sw-outreach/SKILL.md) — drafting and
   reviewing outbound messages to the stuttering community.
+- [`skills/sw-program-writing/SKILL.md`](./skills/sw-program-writing/SKILL.md):
+  writing and auditing Speechworks programs in plain English. Its
+  `references/` and `scripts/` folders come with it, so load the whole
+  folder, not only `SKILL.md`.
 
 Because each is plain Markdown under an MIT license, almost any AI agent or tool
 can use it, either by loading the rules as instructions or by installing it
@@ -19,6 +23,7 @@ Every method below points at the same source of truth:
 ```text
 https://raw.githubusercontent.com/speech-works/sw-guardrails/main/skills/sw-guardrails/SKILL.md
 https://raw.githubusercontent.com/speech-works/sw-guardrails/main/skills/sw-outreach/SKILL.md
+https://raw.githubusercontent.com/speech-works/sw-guardrails/main/skills/sw-program-writing/SKILL.md
 ```
 
 Those URLs always serve the latest rules from `main`. For stable, unchanging
@@ -35,32 +40,24 @@ https://raw.githubusercontent.com/speech-works/sw-guardrails/<commit-or-tag>/ski
 /plugin install sw-guardrails@speechworks
 ```
 
-Both skills come with the plugin.
+All three skills come with the plugin.
 
 ## Claude Code (any client), as skills
 
-Clone the repo and copy the skill folders into a skills directory; Claude Code
-finds each `SKILL.md` automatically.
-
-User-level, available in all your projects:
-
-```bash
-git clone https://github.com/speech-works/sw-guardrails.git /tmp/sw-guardrails
-cp -R /tmp/sw-guardrails/skills/* ~/.claude/skills/
-```
-
-Project-level, one repo (and shared with teammates if you commit it):
+Do not copy these skills into a project's `.claude/skills` or `.agents/skills`.
+This repo is the single source of truth for Speechworks skills, and a copy goes
+stale (sw-blog's copies did). Install the plugin once at user level instead:
 
 ```bash
-git clone https://github.com/speech-works/sw-guardrails.git /tmp/sw-guardrails
-cp -R /tmp/sw-guardrails/skills/* .claude/skills/
+claude plugin marketplace add speech-works/sw-guardrails   # or a local path to this repo
+claude plugin install sw-guardrails@speechworks
 ```
 
-Then, in a session:
+After you change a skill here, refresh the installed plugin:
 
-```text
-/sw-guardrails review path/to/file
-/sw-outreach draft a reply to a community contact
+```bash
+claude plugin marketplace update speechworks
+claude plugin update sw-guardrails@speechworks
 ```
 
 ## Cursor, Windsurf, and other IDE agents
@@ -77,6 +74,7 @@ Fetch the file you need and include it in the agent's system prompt or context:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/speech-works/sw-guardrails/main/skills/sw-outreach/SKILL.md
+https://raw.githubusercontent.com/speech-works/sw-guardrails/main/skills/sw-program-writing/SKILL.md
 ```
 
 Paste the output into your agent's instructions, or have the agent fetch the URL

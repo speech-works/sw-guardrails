@@ -1,0 +1,34 @@
+extends: existence
+message: "'%s' reads as AI or promo vocabulary. Use a plain word."
+level: error
+ignorecase: true
+tokens:
+  - delve
+  - tapestry
+  - crucial
+  - robust
+  - leverage
+  - journey
+  - empower(?:ing|s)?
+  - seamless(?:ly)?
+  - navigate
+  - foster
+  - landscape
+  - unlock
+  - elevate
+  - pivotal
+  - vital
+  - transformative
+  - game[- ]changer
+  - holistic
+  - realm
+  - testament
+  - underscore[sd]?
+  - showcase
+  - embark
+  - resonate[sd]?
+  - it's worth noting
+  - worth noting
+  - in today's
+  - genuinely
+  - truly
