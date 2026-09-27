@@ -1,0 +1,24 @@
+extends: existence
+message: "'%s' is research jargon. Explain it in everyday words or cut it."
+level: warning
+ignorecase: true
+tokens:
+  - associated with
+  - genetic share
+  - (?:a|the) (?:whole )?population
+  - self-reported
+  - assessed
+  - diagnosis
+  - proposal
+  - cohort
+  - meta-analys[ie]s
+  - effect size
+  - statistically significant
+  - correlat(?:e|ed|ion)
+  - participants
+  - evidence-based
+  - best-evidenced
+  - mapped
+  - regions of the genome
+  - cortico-basal-ganglia
+  - small to medium

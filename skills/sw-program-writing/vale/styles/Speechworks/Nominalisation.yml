@@ -1,0 +1,23 @@
+extends: existence
+message: "'%s' is an abstract noun. Can you use the verb or a concrete word?"
+level: suggestion
+ignorecase: true
+tokens:
+  - '\w{3,}(?:tion|sion|ment|ness|ity|ance|ence)s?'
+exceptions:
+  - question
+  - questions
+  - moment
+  - moments
+  - sentence
+  - sentences
+  - attention
+  - situation
+  - situations
+  - difference
+  - differences
+  - evidence
+  - information
+  - confidence
+  - experience
+  - mention

@@ -1,0 +1,8 @@
+extends: existence
+message: "Negate-then-assert frame ('It is not X. It is Y.' or the reverse). State the point once, positively."
+level: error
+scope: raw
+nonword: true
+tokens:
+  - '\b(?:It|That|This)(?: is|''s| does| was) not\b[^.!?]{1,80}[.!?]\s+(?:It|That|This) (?:is|was|does)\b'
+  - '\b(?:It|That|This) is (?:a|an|the)\b[^.!?]{1,80}[.!?]\s+(?:It|That|This) is (?:simply |just )?not\b'

@@ -1,0 +1,8 @@
+extends: existence
+message: "'%s': contrast frame. Say the positive point directly."
+level: error
+ignorecase: true
+tokens:
+  - rather than
+  - as opposed to
+  - instead of being

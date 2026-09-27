@@ -6,7 +6,7 @@
 > behaviour.
 
 A [Claude Code](https://docs.claude.com/en/docs/claude-code) plugin for
-[Speechworks](https://speechworks.app) that bundles two skills for the way we
+[Speechworks](https://speechworks.app) that bundles three skills for the way we
 write about stuttering and stammering:
 
 - **`sw-guardrails`** — reviews any Speechworks artifact, words or code, against
@@ -15,8 +15,13 @@ write about stuttering and stammering:
   community (people who stutter, self-help groups, SLPs, NGOs, partners) so they
   stay honest, grounded in what the product can actually back, and human rather
   than AI or salesy.
+- **`sw-program-writing`**: writes Speechworks programs and days from scratch
+  in plain English, and audits new and existing programs (plain-English
+  checker, structure and evidence checks, a blind three-reader test), ending
+  with a `sw-guardrails` review. It replaces the earlier `sw-plain-english`
+  rewriter.
 
-Each skill is a single Markdown file under [`skills/`](./skills), and each works
+Each skill has a `SKILL.md` under [`skills/`](./skills), and each works
 installed as a plugin or read as a plain checklist. The reviewer checks words and
 code alike: blog posts, marketing and landing copy, UI strings, AI Coach and
 other LLM prompts, analytics event names, metric and KPI names, dashboard tiles,
@@ -94,6 +99,17 @@ research actually support (verify before you write it), and strip the AI and
 salesy tells. It assumes the guardrails rules above and tells you to run drafts
 through them.
 
+### `sw-program-writing`: program writing and audit
+
+The skill lives in
+[`skills/sw-program-writing/`](./skills/sw-program-writing/SKILL.md). It has
+three modes: write a new program or day (research and evidence first, then
+spec, quiz bank and days), audit a new program before it ships, and audit and
+rewrite a live program with the smallest edit. The audit layer runs a Vale and
+fact-lock checker (`scripts/check.sh`, needs `vale` and Python 3), the sw-be-2
+structure and evidence tests, a video guard, a `sw-guardrails` review and a
+blind three-reader test.
+
 ---
 
 ## Install and use
@@ -129,25 +145,14 @@ When a teammate clones that repo and trusts it, Claude Code registers the
 marketplace and enables the plugin automatically. Updates come with
 `/plugin marketplace update speechworks`.
 
-### As project skills (no plugin)
+### Do not copy skills into projects
 
-Or drop the skills straight into a project's skills directory. Each folder under
-[`skills/`](./skills) maps to one `.claude/skills/<name>/` directory:
-
-```bash
-# from your project root
-git clone https://github.com/speech-works/sw-guardrails.git /tmp/sw-guardrails
-cp -R /tmp/sw-guardrails/skills/* .claude/skills/
-```
-
-That gives you `.claude/skills/sw-guardrails/SKILL.md` and
-`.claude/skills/sw-outreach/SKILL.md`, which Claude Code picks up automatically.
-Re-run the copy to update, or pin to a fixed commit by checking it out in the
-clone before copying:
-
-```bash
-git -C /tmp/sw-guardrails checkout <commit-sha>
-```
+This repo is the single source of truth for Speechworks skills. Do not copy
+the folders under [`skills/`](./skills) into a project's `.claude/skills` or
+`.agents/skills`: copies go stale. Install the plugin at user level (above) so
+every repo reads the same skills, and refresh it after a change with
+`claude plugin marketplace update speechworks` and
+`claude plugin update sw-guardrails@speechworks`.
 
 ### Either way
 
@@ -158,9 +163,11 @@ In a session, invoke a skill by name or just describe the task:
 /sw-guardrails audit our analytics event names
 /sw-outreach draft a reply to a self-help-group contact
 /sw-outreach make this message less salesy and more honest
+/sw-program-writing audit and rewrite Word Swap day 3
+/sw-program-writing draft a new 7-day program on phone calls
 ```
 
-You can also read either `SKILL.md` (under [`skills/`](./skills)) as a plain
+You can also read any `SKILL.md` (under [`skills/`](./skills)) as a plain
 checklist — the reviewer for PR or editorial sign-off, the outreach one before
 sending a message — with no Claude Code involved. The guardrails grep
 quick-reference makes a fast first pass for a CI step.
@@ -172,6 +179,7 @@ quick-reference makes a fast first pass for a CI step.
 - [x] Core guidelines (A to D), severities, and the grep quick-reference
 - [x] Packaged as a Claude Code plugin and marketplace
 - [x] Second skill — `sw-outreach`, for outbound messages to the stuttering community
+- [x] Third skill: `sw-program-writing`, for writing and auditing programs (replaces `sw-plain-english`)
 - [ ] Submit to the [Claude Community Marketplace](https://github.com/anthropics/claude-plugins-community) so it is discoverable to all Claude Code users
 - [ ] Worked before-and-after examples for each rule
 - [ ] A CI-friendly grep script (`scripts/check.sh`)

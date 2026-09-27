@@ -1,0 +1,7 @@
+extends: existence
+message: "'Not X but Y' contrast frame: '%s'. State what it is."
+level: error
+scope: sentence
+ignorecase: true
+raw:
+  - '\bnot\b[^.;:!?]{1,60}?,?\s+but\b'

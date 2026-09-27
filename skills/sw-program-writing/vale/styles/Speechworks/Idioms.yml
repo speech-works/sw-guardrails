@@ -1,0 +1,62 @@
+extends: existence
+message: "'%s' is an idiom or metaphor. Non-native readers may read it literally."
+level: warning
+ignorecase: true
+tokens:
+  - the wrong way round
+  - the right way round
+  - worth slowing down on
+  - on its own account
+  - has the same shape
+  - gets stretched
+  - below the waterline
+  - landed
+  - feel the room settle
+  - with nothing under them
+  - get on with
+  - bear with
+  - heavier than
+  - through your mouth
+  - the whole job
+  - the whole design
+  - stay put
+  - stayed put
+  - runs ahead
+  - fires fast
+  - cliff edge
+  - under (?:it|them)
+  - on the day
+  - (?:set|sets) it off
+  - go(?:es)? off
+  - make sense
+  - comes up
+  - at the end of the day
+  - on the same page
+  - in the same boat
+  - piece of cake
+  - hit the nail
+  - the ball rolling
+  - under your belt
+  - on the line
+  - off the hook
+  - take it on board
+  - the elephant in the room
+  - rule of thumb
+  - over the top
+  - hold (?:it|the number) loosely
+  - the tip of
+  - in the moment
+  - live rather than settled
+  - run(?:s)? up to
+  - makes? sense of
+  - comes? down to
+  - figure(?:s|d)? out
+  - point(?:s)? back at
+  - lands? on
+  - on your side
+  - carry weight
+  - out of the blue
+  - by the same token
+  - in a nutshell
+  - a long shot
+  - on top of
