@@ -92,3 +92,51 @@ show the shape of the fix. They are patterns to copy, not text to paste.
 - After: `instructionsOverride` and `completionPromptOverride` on the paid
   day's ACTIVITY block, written to the day, or a private `PROG_DRILL_*` row.
 
+## Interview Ready page review: before and after (October 2026)
+
+From the founder's review of the printed program. Each one is a pattern that
+came back on several pages.
+
+**16. A promise the app does not keep**
+- Before: "If you block, they wait. Completely, silently, for as long as it
+  takes." The AI replies after about 1 second of silence.
+- After: "If you block, they wait. They do not talk over you." The same claim
+  was then fixed in the day 10 close, the day 11 subtitle and quiz, and the
+  day 12 recall and teaching.
+
+**17. A pronoun with nothing to point to**
+- Before (quiz explanation): "It is built not to be. A simulated interviewer
+  who talks over a block is not practice, it is an injury you paid for."
+- After: "No. The interviewer is set up to be patient about your speech. Only
+  the time and long answers make them impatient."
+
+**18. Advice with no example**
+- Before: "Our advice for this one is mostly mechanical. Name something real
+  that is not central to the job. Say what you do about it, then stop
+  talking. The trap is a paragraph of explanation after the weakness."
+- After: the same recipe in short sentences, then a good answer ("I can be
+  slow to hand over work I care about. Now I agree a handover date at the
+  start of each project.") and the trap ("...but that is only because I care
+  about quality, and in my last team we...").
+
+**19. An example that does not fit the screen**
+- Before: the Reframe writing box said "They have stopped listening. My
+  version is..." while the shuffled thought on screen was "People will judge
+  me if I stutter."
+- After: "My version is..." in all six program Reframe steps.
+
+**20. A general step where the person's own words exist**
+- Before: "Take the first thing on the list you wrote on day one. You might
+  ring the recruiter back, or send the message..."
+- After: "The first one on your list is "{{firstGoal}}". Do that one today,
+  with a real person." Filled as "Get through the recruiter", with the old
+  text kept as the `noGoals` fallback.
+
+**21. An instruction with no place to do it**
+- Before: "Say what you think will happen before you start. When it is over,
+  you check a prediction of your own." Nothing on the call screen asks for
+  the prediction.
+- After: "Before you start, decide what you think will happen. After the
+  call, you write it down in the form below and compare it with what
+  happened."
+

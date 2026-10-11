@@ -18,20 +18,23 @@ reference.
    programs have one: Understanding Your Voice; The Art of Disclosure; The
    Word Swap; Bouncing Back; Dating, Intimacy & Vulnerability; Interview
    Ready; The Speech Toolkit. The video audit also counts every step in
-   every program, so a new program or a new step anywhere is a change the
-   video team must hear about.
+   every program, so a new program or a new step anywhere needs the video
+   check in rule 4.
 2. **Keep every term below word for word**, in the teaching, the quiz and the
    activity text of that day, and in any later day that refers back to it.
 3. Before renaming any other term on a video day, search the captions and the
    speech-to-text files for it.
-4. **After any pack file change, tell the video team.** They re-run their
-   text-to-caption comparison and record new hashes in
-   `docs/programs/video-audit-2026-09-22/replacement-manifest.json`
-   themselves. Never edit that manifest or re-hash its files yourself.
-5. `node docs/programs/video-audit-2026-09-22/preflight.cjs` is the video
-   team's check. It is already failing today (after three evidence commits
-   made after 22 September 2026), so a failure there does not by itself mean
-   your change broke it. Report it and leave it to the video team.
+4. **After any pack file change, run the video check yourself.** There is no
+   separate video team (founder, 2026-10-06). `node scripts/videoImpact.cjs`
+   lists every video day whose text changed since the baseline. For each,
+   `--show "<title>"` prints the caption next to the day text. Read both and
+   check sequence, terms, cross-references and claims. Report what you found.
+   Record a new baseline (`--record --note "..."`) only after that reading,
+   never to make a failure go away, and ask the founder first.
+5. Never edit `docs/programs/video-audit-2026-09-22/replacement-manifest.json`
+   or re-hash its files without asking. `preflight.cjs` in that folder is an
+   older check that already failed before October 2026, so a failure there
+   does not by itself mean your change broke it.
 
 ## Terms, by day
 
@@ -59,7 +62,7 @@ reference.
   read the same thing.
 - After a text change, Claude runs the caption-vs-text check itself (founder,
   2026-09-27): sequence, every "today / tomorrow / later" reference, and every
-  term or number the video says. Still leave the manifest and preflight.cjs
-  to the video team.
+  term or number the video says. Ask the founder before touching the
+  manifest or preflight.cjs.
 - The full line-by-line map of what each video refers to is in
   video-crossrefs.md. Check it after every rewrite.
