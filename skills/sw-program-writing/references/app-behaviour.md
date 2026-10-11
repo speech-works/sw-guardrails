@@ -11,6 +11,9 @@ the code that does it. The table below is a starting point, checked on
 2026-10-11. Code changes, so confirm the file before you rely on a row. If a
 row is wrong, fix this file in the same change.
 
+When a review finds a new untrue promise, add a row or a "write X, never
+Y" line here in the same change. That is how this check stays current.
+
 Paths are relative to sw-be-2 unless they start with `app/`, which means
 sw-fe-m-2.
 

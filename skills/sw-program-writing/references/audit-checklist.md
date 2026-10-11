@@ -30,7 +30,8 @@ If the program has a video, read `video-locked-terms.md` now.
 
 **Pass:** Vale errors 0 on every day. Fact lock PASS on every rewritten day.
 Every ADDED line is true and matches its evidence entry. Every Vale warning
-(sentence length, clause chain, idiom, research jargon, trailing negation) is
+(sentence length, clause chain, idiom, research jargon, trailing negation,
+vague reference) is
 fixed or has a one-line reason in your report. Then compare each changed
 sentence with its original for a dropped idea, a hedge that lost its reach,
 a hotter or colder word, or a strengthened negation. The fact lock cannot see
@@ -109,7 +110,7 @@ The faults the 2026-09-05 audit found, which must not come back:
 | A promise about the app the code does not keep | Every sentence about what a call, an AI character, a reminder or a saved answer does, against `app-behaviour.md` and the code | 0 untrue promises. Each wrong claim searched across all programs. ("Completely, silently, for as long as it takes" was in 6 places.) |
 | An example that does not fit the reader | Each placeholder and worked example, against everything the screen can show (shuffle, other list items, other answers) | Names nothing that can change, or uses a token with a fallback |
 | A form example that shows another day's task | Each `fieldOverrides` placeholder against the day's own task | Every example is about today's task |
-| A pronoun with nothing to point to | Sentences that start "It", "This", "That", "They" in explanations and quiz options | The thing it means is named in the same block |
+| A pronoun with nothing to point to | Vale `VagueReference` warnings, then sentences that start "It", "This", "That", "They" in explanations and quiz options. Read the sentence before: does "it" point to the noun the writer meant, or to the last noun said? | The thing it means is named in the same block |
 | A count or recap that does not add up | Day 14 recaps, "N calls", "N people", "N interviews" against the days | Each count matches the days and uses the same words |
 | Filler that adds nothing | Lines like "Nothing here says it is", "Nobody measured that", "Five is a list you carry into the room" | Cut unless it carries a fact or a choice |
 | Boilerplate copied between programs | `python3 <skill>/scripts/shared_runs.py <scratch>/all` | New program: 0 ACROSS passages except quoted study wording and technique names. Rewrite: no ACROSS passage that was not there before. |
