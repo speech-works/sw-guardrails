@@ -1,0 +1,9 @@
+extends: existence
+message: "'%s': name the thing. A reader may not know what 'it', 'this' or 'that' points to here."
+level: warning
+ignorecase: true
+tokens:
+  - '\b(?:day|time|moment|week) for (?:it|this|that)\b'
+  - '\bit keeps\b'
+  - '\bnot ready for (?:it|this|that)\b'
+  - '\bif (?:it|this|that) is too much\b'

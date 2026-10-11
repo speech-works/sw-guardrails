@@ -55,7 +55,8 @@ day; never all TEXT.
   (3.4, a DECISION).
 - The renderer handles headings `#` to `####`, blockquotes (`> ` on every
   line), checkbox, bullet and ordered lists, bold, italic, links. No tables,
-  images, code blocks or nested lists (3.9).
+  images, code blocks or nested lists (3.9). A blank line ends a list item;
+  indent a line to continue the item.
 - Pick a teaching format: cited excerpt with critique, two-source contrast,
   annotated transcript, worked example, myth against evidence, checkbox
   worksheet, bank activity, AI call rep. Never plain prose from start to end
@@ -95,16 +96,32 @@ feel?" fails, "What happened?" passes). Use the program log forms
 `TOOLKIT_TRIAL_LOG`, `POST_EVENT_LOG`). The retired `EXPOSURE` form has no
 expected or happened field; never put it on a paid day.
 
-**Readback is limited.** Only keepsake forms and the last-day `WEEK_REVIEW`
-block show the user their own record. Do not promise a readback anywhere
-else.
+**Readback is limited.** Only the places listed in `app-behaviour.md`
+(keepsake forms, `WEEK_REVIEW`, the GOALS block and Home card, a FORM with
+`recallFrom`, the saved Reframe reply) show the user their own record. Do not
+promise a readback or a reminder anywhere else. A saved answer is always shown
+with its context, for example the thought a reply answers, because a short
+reply means nothing on its own.
+
+**The goals list is required.** Every program with a goal harness asks for
+the list on day 1, and no day opens without it. Later days may use the
+person's own words through `{{namedGoals}}` (TEXT) and `{{firstGoal}}`
+(ACTIVITY). Every use needs a fallback (`noGoalsText`, `noGoals`). Use the
+words exactly as the list shows them.
 
 **Activity rows are shared.** A library activity row also shows in Explore
 and in free packs. Change what a paid day shows with `titleOverride`,
 `descriptionOverride`, `instructionsOverride`, `encouragementOverride`,
 `completionPromptOverride` and `completionPlaceholderOverride`, or write a
-private `PROG_DRILL_*` row. Read the drill screen text: it is what the reader
-sees just before they act.
+private `PROG_DRILL_*` row. The overrides show on the day card and on the step
+screen after Start. Read the step screen text: it is what the reader sees just
+before they act. A completion placeholder must fit every thought or item the
+screen can show, because some screens (Reframe) let the reader shuffle.
+
+**The step stays inside the program.** A program step's screens lead only
+back to the day. Never add a link, button or suggestion that opens Explore,
+Settings, sharing, reminders or another activity. Program steps cost no
+stamina, so no step shows a sales screen.
 
 ## Copy (Part 4)
 

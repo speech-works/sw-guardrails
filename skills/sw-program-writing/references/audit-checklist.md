@@ -30,7 +30,8 @@ If the program has a video, read `video-locked-terms.md` now.
 
 **Pass:** Vale errors 0 on every day. Fact lock PASS on every rewritten day.
 Every ADDED line is true and matches its evidence entry. Every Vale warning
-(sentence length, clause chain, idiom, research jargon, trailing negation) is
+(sentence length, clause chain, idiom, research jargon, trailing negation,
+vague reference) is
 fixed or has a one-line reason in your report. Then compare each changed
 sentence with its original for a dropped idea, a hedge that lost its reach,
 a hotter or colder word, or a strengthened negation. The fact lock cannot see
@@ -105,7 +106,13 @@ The faults the 2026-09-05 audit found, which must not come back:
 | The bridge in gives away the recall answer | Read each bridge in against the recall pool under it. Look for the answer, its reason, and any detail the distractors turn on ("only once", "with a real person", "three of them"). A wording match is not enough; 45 of 70 leaked in meaning. | 0 leaks. A pair that cannot be cleaned is listed as narrowed. |
 | A log that cannot record what the day says it records | The FORM's fields against the block title and the day's words about it | The form has a field for every thing the day says the reader writes down. No `EXPOSURE` form on a paid day. |
 | A library activity row that contradicts the day | Read the drill screen text (instructions, encouragement, completion prompt) of every ACTIVITY | No banned instruction, no fixed script the day rejected, no completion gated on anxiety dropping. Fix with overrides or a private `PROG_DRILL_*` row. |
-| A promise of readback the product cannot do | Search for "look back at", "your notes from", "review rather than a blank page" | Only keepsake forms and `WEEK_REVIEW` read back. |
+| A promise of readback the product cannot do | Search for "look back at", "your notes from", "review rather than a blank page", "the app will ask", "keeps asking" | Only the places in `app-behaviour.md` read back or remind. |
+| A promise about the app the code does not keep | Every sentence about what a call, an AI character, a reminder or a saved answer does, against `app-behaviour.md` and the code | 0 untrue promises. Each wrong claim searched across all programs. ("Completely, silently, for as long as it takes" was in 6 places.) |
+| An example that does not fit the reader | Each placeholder and worked example, against everything the screen can show (shuffle, other list items, other answers) | Names nothing that can change, or uses a token with a fallback |
+| A form example that shows another day's task | Each `fieldOverrides` placeholder against the day's own task | Every example is about today's task |
+| A pronoun with nothing to point to | Vale `VagueReference` warnings, then sentences that start "It", "This", "That", "They" in explanations and quiz options. Read the sentence before: does "it" point to the noun the writer meant, or to the last noun said? | The thing it means is named in the same block |
+| A count or recap that does not add up | Day 14 recaps, "N calls", "N people", "N interviews" against the days | Each count matches the days and uses the same words |
+| Filler that adds nothing | Lines like "Nothing here says it is", "Nobody measured that", "Five is a list you carry into the room" | Cut unless it carries a fact or a choice |
 | Boilerplate copied between programs | `python3 <skill>/scripts/shared_runs.py <scratch>/all` | New program: 0 ACROSS passages except quoted study wording and technique names. Rewrite: no ACROSS passage that was not there before. |
 | Positioning repeated ("this program never", "on purpose", "deliberate", "the honest version", "What this is not") | `grep -n -i` over the extracted days, and the INSIDE lines from `shared_runs.py` | Once per program, on day 1, via the shared promises. 0 elsewhere. |
 | A research claim one rung above its label | Step 3 | 0 |
@@ -119,11 +126,17 @@ and block named for every no. Every fault row passes.
 
 Only for a program with a video, and for any new program or new step.
 
+```bash
+node scripts/videoImpact.cjs                   # exits 1 if a video day changed
+node scripts/videoImpact.cjs --show "<title>"  # caption next to the day text
+```
+
 **Pass:** 0 locked terms changed (search the before and after files for each
 term in `video-locked-terms.md`). The step count and order are unchanged in a
-program with a video. Your report says, in one line, that the video team
-must re-run its text-to-caption comparison, and names the pack files you
-changed. You did not touch the video manifest.
+program with a video. For every video day the script reports, you read the
+caption next to the new text and found no contradiction in sequence, terms
+or claims. Record a new baseline (`--record --note "..."`) only after that
+comparison, and ask the founder first. Never edit the video manifest.
 
 ## 6. sw-guardrails review
 
@@ -149,6 +162,23 @@ reader again as a new agent.
 If this step leads to any change, run steps 1 and 6 again on the changed
 lines.
 
+## 8. On screen
+
+Text that passes every check can still be drawn wrong, or the step screen can
+say something the day card does not.
+
+```bash
+npm run db:seed:local    # then restore the test user and open the day
+```
+
+Open each changed day in the iOS simulator. Tap Start on each changed step.
+
+**Pass:** the day card and the step screen show the day's own words. No
+paragraph sits inside a list item or a heading. Every placeholder fits the
+content on screen. Nothing on a step's finish screen leads out of the
+program. Every promise about the app is true when you try it. Screenshot the
+changed screens for the report.
+
 ## The report
 
 Return, in this order:
@@ -159,4 +189,4 @@ Return, in this order:
    change").
 3. In mode C, the changed lines with the rule behind each, and anything kept
    complex on purpose.
-4. The video team line, if step 5 applied.
+4. The video days compared in step 5, and what you found.

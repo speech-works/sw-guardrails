@@ -13,8 +13,9 @@ description: >-
   tests and a blind three-reader test. Triggers: "write a program", "add a
   day", "draft day 3", "edit this lesson", "audit this program", "is this
   program ready to ship", "make this plain English", "simplify this lesson",
-  "too complex", "check reading level". Calls for a sw-guardrails review of
-  the final copy.
+  "too complex", "check reading level", and when the founder sends photos of
+  printed program pages with handwritten marks. Calls for a sw-guardrails
+  review of the final copy.
 ---
 
 # Speechworks program writing
@@ -65,8 +66,18 @@ and ask. Modes B and C share one audit layer, described below and in full in
 7. **Video-locked terms and steps.** In a program with a video, never add,
    move or remove a step, and keep every term in
    `references/video-locked-terms.md` word for word. Read that file before
-   any mode B or C work on such a program. After any pack file change, tell
-   the video team. Never update their manifest hashes yourself.
+   any mode B or C work on such a program. After any pack file change, run
+   `node scripts/videoImpact.cjs` and compare each changed video day with its
+   captions yourself. There is no separate video team.
+8. **Say only what the app does.** Before a sentence promises how a call, an
+   AI character, a reminder or a saved answer behaves, find the code that
+   does it. `references/app-behaviour.md` lists the behaviours past text got
+   wrong. When one claim is wrong, search every program for the same claim.
+9. **Examples fit every reader who sees them.** A placeholder or worked
+   example must fit whatever is on that screen for that person. If the
+   content can change (a shuffled thought, a person's own list), the example
+   names nothing specific ("My version is..."), or the text uses the
+   person's own words through a token with a fallback.
 
 ## Mode A: write a new program or day
 
@@ -125,6 +136,31 @@ again. A new program ships only when every step passes.
    complex on purpose, and faults you found and did not fix because they need
    the founder, a clinician or a product change.
 
+## Reviewing marked pages with the founder
+
+The founder prints the program, marks it by hand and sends photos one page at
+a time. Each mark is a question, a deletion, or "write simpler".
+
+1. **Check the source first.** A printed page can be older than the code.
+   For each marked sentence, search `src/seed/pack/`, `src/seed/question/` and
+   `src/seed/exposure/`. If it already changed, say so and show the current
+   sentence.
+2. **Answer questions with the code.** "Can the AI do this?" or "does the app
+   give space to write this?" needs the file and line that proves it, then a
+   plain yes or no.
+3. **Propose in a table**: where, now, proposed. Offer 2 or 3 options when
+   the wording is a judgement call, with your recommendation first.
+4. **Apply only what is approved.** Then search all programs for the same
+   pattern and propose those rows too.
+5. **After each approved change:** run the program tests and
+   `node scripts/videoImpact.cjs`, seed locally, restore the test data, and
+   ask before every commit. Never push or seed production until the founder
+   says the whole program is reviewed.
+
+The founder reads fast and in a second language. Lead with the answer, keep
+sentences short, and give a concrete example (a named person, a real
+sentence) for anything abstract.
+
 ## The audit layer
 
 Run in this order. Every step has a pass line. Commands and details are in
@@ -136,11 +172,12 @@ Run in this order. Every step has a pass line. Commands and details are in
 | 2 | Structure: depth report, `npm run content:check`, the copy, evidence and last-day tests, `npm run spec:tables` | 0 days below the floor. All tests green, including `quizAnswerBias`. Spec table regenerated. |
 | 3 | Evidence: every research sentence has a key, `plainCount` in the sentence, the limit kept; `npm run evidence:review` | 0 unmapped claims. 0 claims past population or strength. Review sheet regenerated. |
 | 4 | Program judgement: strategy 10.3 questions and the past faults (recap leaks, generic logs, boilerplate, repeated positioning) with `scripts/shared_runs.py` | 0 recall answers in a bridge in. No new passage shared with another program. Each repeat has a reason. |
-| 5 | Video guard: `references/video-locked-terms.md` | 0 locked terms changed. Step count and order unchanged in a program with a video. Video team told. |
+| 5 | Video guard: `references/video-locked-terms.md`, `node scripts/videoImpact.cjs` | 0 locked terms changed. Step count and order unchanged. Every changed video day compared with its captions, 0 contradictions. |
 | 6 | sw-guardrails review of the changed copy | 0 block findings. Each warn finding fixed or argued in writing. |
 | 7 | Blind three-reader test (below) | All three readers pass. |
+| 8 | On screen: seed locally and open the changed days in the simulator | Text on the day card and the step screen match. No sentence drawn in the wrong place. Every promise about the app is true. |
 
-If step 7 leads to any change in the copy, run steps 1 and 6 again on the
+If step 7 or 8 leads to any change in the copy, run steps 1 and 6 again on the
 changed lines, so sw-guardrails always sees the final text.
 
 ### The blind three-reader test
@@ -159,7 +196,8 @@ as a new agent.
 
 - `references/`: `plain-english.md` (the tested rules), `program-design.md`
   (strategy rules and where the two standards meet), `evidence.md`,
-  `audit-checklist.md`, `video-locked-terms.md`, `approved-definitions.md`,
+  `audit-checklist.md`, `app-behaviour.md` (what calls, steps and readback
+  really do), `video-locked-terms.md`, `approved-definitions.md`,
   `examples.md`.
 - `scripts/check.sh`, `scripts/fact_lock.py`, `vale/`: the plain-English
   checker. Needs `vale` and Python 3.
