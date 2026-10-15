@@ -50,7 +50,10 @@ For new text (mode A), write to these rules from the first draft and run
    on purpose: the iceberg, the metronome, the alarm, the arrow (which way
    cause runs), the timing circuit. Keep the picture and add one plain
    sentence that says what it means. Never delete one, and never add a new
-   one.
+   one. The founder may replace a picture with a name readers already know:
+   in the Panic Button (2026-10-15) "the alarm" became "the fight-or-flight
+   response", and "the buzz" became "adrenaline". Propose such a swap; do not
+   make it alone.
 5. **No contrast frames.** No "not X, but Y", no "It is not X. It is Y.", no
    "rather than", no "instead of" used as a contrast, no trailing ", not Y".
    Say the positive point once. Test a negation by deleting it. If the reader
@@ -91,6 +94,20 @@ For new text (mode A), write to these rules from the first draft and run
     `approved-definitions.md`. If the program already defines the term in an
     earlier day, that definition wins. The day's own numbers and hedges
     always win. If you must write a new definition, flag it for a clinician.
+12. **Every reference is clear on its own.** When a sentence points at
+    something ("the last three times", "your list", "the line", "one of
+    them", "that number"), the reader must know what it is without looking
+    back. If the thing is not on the same screen, name it again in a few
+    words. Not clear: "Check it against the last three times." Clear: "Think
+    of the last 3 times you were in a moment like the one you fear, for
+    example your last 3 team meetings." The founder asked this of every
+    marked page: "Which last 3 times? Will the user know?"
+13. **Do not assume the reader's past.** A task that asks about earlier
+    moments must work for a reader who has had none, and for one whose
+    moments went badly. Say what to do in each case, in the task itself.
+    Example (Panic Button day 4): "If you have not had a moment like this,
+    think of the closest one you remember." and "It is fine to write that it
+    was hard."
 
 ## Strong defaults
 
@@ -125,6 +142,9 @@ For new text (mode A), write to these rules from the first draft and run
 - Do not add facts, examples or reassurance that were not there.
 - Do not turn a lesson into bullet points throughout.
 - Do not make it childish. Short sentences, adult ideas.
+- Do not write "We found no study…", "no study has…", "nobody has
+  measured/shown/tested…" or "not tested in people who stutter". Name who the
+  study was about ("The study was with students"). See `evidence.md`.
 - Do not grade by readability formula alone. Formulas disagree by several
   grade levels. The hard rules and the read-aloud check are the test.
 
@@ -162,6 +182,8 @@ For new text (mode A), write to these rules from the first draft and run
 | Carry the join word when splitting | Causal markers help first and second language readers | PROGRAM_STRATEGY 4.4 |
 | No idioms or figures of speech | Second-language readers guess idioms and often guess wrong | Cooper 1999, TESOL Quarterly 33(2) |
 | Explain named images once | The iceberg and the metronome carry meaning; deleting them loses it | Our test of easy-language, which deleted the metronome |
+| Every reference clear on its own | A second-language reader who has to look back for "the line" or "the three moments" loses the sentence. The founder marked this on most printed pages of the Panic Button | Founder review, 2026-10-15 |
+| Do not assume the reader's past | "The last three times" fails a reader with no such moment, and "what went well" fails one whose moments went badly | Founder review, 2026-10-15 |
 | No contrast frames | "rather than" appeared about 350 times and "It is not X. It is Y." 58 times; readers must hold the wrong idea to reach the right one | Our audit; house style |
 | Facts locked | A plain rewrite that changes a finding is a clinical error | ProgramEvidence.ts rules |
 | Plain term first, technical term after | Readers search and talk in everyday words | NHS ("piles (haemorrhoids)") |

@@ -174,7 +174,7 @@ Run in this order. Every step has a pass line. Commands and details are in
 | 4 | Program judgement: strategy 10.3 questions and the past faults (recap leaks, generic logs, boilerplate, repeated positioning) with `scripts/shared_runs.py` | 0 recall answers in a bridge in. No new passage shared with another program. Each repeat has a reason. |
 | 5 | Video guard: `references/video-locked-terms.md`, `node scripts/videoImpact.cjs` | 0 locked terms changed. Step count and order unchanged. Every changed video day compared with its captions, 0 contradictions. |
 | 6 | sw-guardrails review of the changed copy | 0 block findings. Each warn finding fixed or argued in writing. |
-| 7 | Blind three-reader test (below) | All three readers pass. |
+| 7 | Blind three-reader test (below) | The clinician and founder-warmth readers pass. Every sentence the non-native reader marks is fixed or has a reason. |
 | 8 | On screen: seed locally and open the changed days in the simulator | Text on the day card and the step screen match. No sentence drawn in the wrong place. Every promise about the app is true. |
 
 If step 7 or 8 leads to any change in the copy, run steps 1 and 6 again on the
@@ -188,7 +188,7 @@ as a new agent.
 
 | Reader | Gets | Pass |
 |---|---|---|
-| Non-native reader: an adult at about CEFR B1, no clinical training, reading once | The day text only | Restates the main message and the task correctly in their own words. At most 1 sentence per day needed a second read, and none in a task instruction or a quiz question. No idiom read literally. |
+| Non-native reader: an adult at about CEFR B1, no clinical training, reading once | The day text only | Not a gate (founder, 2026-10-12): it finds bad sentences and never passes or fails a day. Fix each sentence it marks, or give a one-line reason. |
 | Clinician fact-check | The day text, its evidence entries, and in mode C the before text | 0 claims stronger or weaker than the entry, 0 dropped hedges or limits, 0 wrong definitions, 0 claims banned by strategy 8.2. One error fails the day. |
 | Founder warmth | The day text, and in mode C the before text | Warmth scored 4 or 5 out of 5, and in mode C not lower than before. 0 permission, choice or kindness lines lost. 0 colder word swaps, 0 person praise. |
 

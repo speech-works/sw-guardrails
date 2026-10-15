@@ -33,6 +33,7 @@ comment before you add or change an entry. This page is the short version.
 | `sourceRead` | Reviewer | FULL_TEXT or ABSTRACT_ONLY. Abstract only caps the entry at MODERATE. |
 | `absenceEvidence` | Reviewer | Needed for any "nobody has measured this" claim |
 | `strengthNote` | Reviewer | Why a review or essay is rated above WEAK |
+| `bridge` | Reviewer, founder | Needed for a careful step from a study outside stuttering. See "Bridging" below. |
 | `lastCheckedAt` | Everyone | The date a person last read the source. Set only by whoever re-read it. |
 
 Every entry also needs a matching entry in `ProgramEvidenceRationale.ts`
@@ -48,8 +49,10 @@ fails without it.
 - If the evidence runs both ways, rate it CONTESTED and put both sides in
   `whatItDoesNotShow`. Do not pick the flattering half.
 - "Nobody has ever measured this" was written four times and was false all
-  four times. Give the source for an absence, or write the narrower true
-  sentence ("never tested on people who stutter").
+  four times. In an entry's reviewer fields, give the source for an absence,
+  or write the narrower true sentence. That narrower sentence stays in the
+  entry. It never goes into program text (see "Never say what was not
+  studied" below).
 - Every past overstatement was a true finding with its limit dropped. Keep
   the limit.
 - Editing an entry means re-reading every day that uses it. Find them with
@@ -76,6 +79,48 @@ WebFetch; Europe PMC's REST `fullTextXML` is another route.
 - Never "proven", "breakthrough", "cure", "miracle".
 - Report in this order: who was studied, what they did, what they found, the
   limit. One number per sentence.
+
+## Never say what was not studied (founder, 2026-10-12)
+
+Program text (day text, quiz questions, options and explanations) never says:
+
+- "We found no study…", "no study has…"
+- "Nobody has measured…", "nobody has shown…", "nobody has tested…"
+- "This was not tested in people who stutter", "not measured in people who
+  stutter", or any other wording of the same idea
+
+A reader with anxiety hears "this will not work for you". Name who the study
+WAS about instead: "The study was with students." "In a study about fear,
+people who could avoid the feared thing stayed afraid of it." If the gap
+matters, a careful step across it needs a bridge (next section). If no step is
+fair, cut the claim.
+
+This rule is for program text. An entry's `whatItDoesNotShow` and other
+reviewer fields still record plainly what was and was not tested.
+
+## Bridging: a careful step from a study outside stuttering
+
+We may use a study about anxiety, fear or another group when the conclusion
+clearly makes sense for people who stutter. The day says what the study found
+and who it was about. Then it takes one careful step with "in the same way"
+or "this may". It never says "will".
+
+Each step needs the founder's approval, recorded in the evidence entry as a
+`bridge` block. Send each new bridge to the founder in this table format
+before it ships.
+
+| Field | What it holds | Example (Understanding Your Voice day 6, `AVOIDANCE_PRESERVES_FEAR`) |
+|---|---|---|
+| `studyFound` | One plain sentence: what the study found, with the group, and the number where there is one | In a lab study about fear, people who could avoid a mild shock stayed afraid of it. People who could not avoid it lost the fear. |
+| `notCovered` | What is different from our reader | It was about fear of a shock, not about speech or about people who stutter. |
+| `weSay` | The exact sentence in the program | In the same way, each swap may keep the word feeling dangerous. |
+| `whyFair` | Why the finding should carry over | A swap is a way to avoid a feared word. The study shows that avoiding a feared thing keeps the fear. |
+| `strength` | `"may"` or `"can"`. Never "will". | may |
+| `approvedBy`, `approvedOn` | Who approved it, and the ISO date | founder, 2026-10-12 |
+
+The type is `EvidenceBridge` in `ProgramEvidence.ts`. A bridged line without
+an approved `bridge` block in its entry is an audit fault
+(`audit-checklist.md`, step 3).
 
 ## Folklore and sources never to use
 

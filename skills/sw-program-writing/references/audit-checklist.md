@@ -40,6 +40,16 @@ those.
 Also check the day title and description by hand: a description is always
 plain (strategy 4.3).
 
+Then read every sentence that points at something ("the line", "your list",
+"the last three times", "one of them") and ask: will the reader know what it
+is without looking back? Vale's vague-reference warning only catches "it" and
+"this". Also read every task that asks about earlier moments, and check it
+says what to do when there were none, or when they went badly
+(`plain-english.md`, rules 12 and 13).
+
+**Pass (by hand):** 0 references the reader must look back for. 0 tasks that
+assume the reader has a past moment, or that it went well.
+
 ## 2. Structure
 
 ```bash
@@ -72,15 +82,28 @@ For every sentence that reports research, a number, a study or a finding:
 - the claim stays inside the entry's `population`, `design` and `strength`;
 - where the sentence could be read wider, the day states the limit as
   `theLimitInPlainWords` says it;
-- the wording uses the certainty ladder and no cause word for a link.
+- the wording uses the certainty ladder and no cause word for a link;
+- the sentence names who the study was about, and never says what was not
+  studied ("We found no study…", "no study has…", "nobody has
+  measured/shown/tested…", "not tested in people who stutter", "not measured
+  in people who stutter"). A reader with anxiety hears "this will not work
+  for you";
+- every step from a study outside stuttering ("in the same way", "this may",
+  "this can") has an approved `bridge` block in its entry, and the line
+  matches the bridge's `weSay` (see `evidence.md`, "Bridging").
 
 ```bash
 npm run evidence:review
 grep -rn "<KEY>" src/seed/pack   # every day that uses an entry you changed
+grep -rn -i -E "found no study|no study has|nobody has (measured|shown|tested)|not (tested|measured) (in|on|with) (people|anybody|anyone) who stutter" \
+  src/seed/pack src/seed/question/programQuiz.ts
 ```
 
 **Pass:** 0 unmapped research sentences. 0 claims past population or
 strength. 0 claims from the folklore or never-cite lists in `evidence.md`.
+0 hits for the "not studied" search. 0 bridged lines without an approved
+`bridge` block; a bridged line without one is a fault, even when the step
+reads as fair.
 The review sheet regenerates without errors. Every day that uses a changed
 entry has been re-read.
 
@@ -155,9 +178,12 @@ reader again as a new agent.
 
 | Reader | Brief | Gets | Pass |
 |---|---|---|---|
-| Non-native reader | "You are an adult who reads English at about CEFR B1, with no clinical training. Read the day once. Mark every sentence you had to read twice or could read two ways. Then say in your own words what the day wants you to understand and what it asks you to do." | The day text only | Main message and task restated correctly. At most 1 marked sentence per day, and none in a task instruction or a quiz question. No idiom read literally. |
+| Non-native reader | "You are an adult who reads English at about CEFR B1, with no clinical training. Read the day once. Mark every sentence you had to read twice or could read two ways. Then say in your own words what the day wants you to understand and what it asks you to do." | The day text only | Not a gate (founder, 2026-10-12). This reader finds bad sentences. It never passes or fails a day. Fix each marked sentence or give a one-line reason, and fix any wrong restatement of the main message or the task. |
 | Clinician fact-check | "You are a speech and language therapist who checks research claims. List every claim that is stronger or weaker than its evidence entry, every dropped hedge or limit, every definition that is wrong or incomplete, and every claim of cure, treatment or a fluency outcome." | The day text, its evidence entries, and in mode C the before text | 0 errors of any kind. One error fails the day. |
 | Founder warmth | "You wrote this program for adults who stutter. Score its warmth from 1 to 5. List any line of permission, choice or kindness that is missing, any word that became colder or hotter, any praise of the person, and anything that reads as generated." | The day text, and in mode C the before text | Score 4 or 5, and in mode C not lower than before. 0 lost permission or kindness lines. 0 colder swaps. 0 person praise. |
+
+The step passes on the clinician and founder-warmth readers. The non-native
+reader's marks are a list of sentences to fix, not a score.
 
 If this step leads to any change, run steps 1 and 6 again on the changed
 lines.
